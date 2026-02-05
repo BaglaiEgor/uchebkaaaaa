@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="uchebkaaa.Pages.MaterialEditDialog"
+        Title="Редактирование материала" Width="500" Height="600">
+    <ScrollViewer Margin="20" Background="#FEF9DE">
+        <StackPanel Spacing="10">
+
+            <TextBlock Text="Артикул:" FontSize="14"/>
+            <TextBox x:Name="ArticleTextBox"/>
+
+            <TextBlock Text="Наименование:" FontSize="14"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Количество:" FontSize="14"/>
+            <TextBox x:Name="CountTextBox"/>
+
+            <TextBlock Text="Единица измерения:" FontSize="14"/>
+            <TextBox x:Name="UnitTextBox"/>
+
+            <TextBlock Text="Цена:" FontSize="14"/>
+            <TextBox x:Name="PriceTextBox"/>
+
+            <TextBlock Text="Поставщик:" FontSize="14"/>
+            <ComboBox x:Name="SupplierComboBox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBlock Text="Склад:" FontSize="14"/>
+            <ComboBox x:Name="WarehouseComboBox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBlock Text="Тип материала:" FontSize="14"/>
+            <TextBox x:Name="ProductTypeTextBox"/>
+
+
+            <TextBlock x:Name="ErrorTextBlock" Foreground="#BB0C07" FontSize="12"
+                       TextWrapping="Wrap" IsVisible="False"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="Сохранить" x:Name="SaveButton" Background="#4879AC" Foreground="White" Padding="20,10" FontSize="14"/>
+                <Button Content="Отмена" x:Name="CancelButton" Background="#BB0C07" Foreground="White" Padding="20,10" FontSize="14"/>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</Window>

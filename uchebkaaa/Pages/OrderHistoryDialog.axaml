@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="uchebkaaa.Pages.OrderHistoryDialog"
+        mc:Ignorable="d"
+        Width="600"
+        Height="400"
+        WindowStartupLocation="CenterOwner"
+        Title="История изменения статусов заказа">
+  <Grid Background="#FEF9DE">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBlock Grid.Row="0"
+               x:Name="HeaderTextBlock"
+               Margin="10"
+               FontSize="18"
+               FontWeight="Bold" />
+
+    <DataGrid Grid.Row="1"
+              x:Name="HistoryDataGrid"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              Margin="10">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Время"
+                            Binding="{Binding ChangeTime}"
+                            Width="180" />
+        <DataGridTextColumn Header="Статус"
+                            Binding="{Binding Status}"
+                            Width="150" />
+        <DataGridTextColumn Header="Изменил"
+                            Binding="{Binding ChangedBy}"
+                            Width="120" />
+        <DataGridTextColumn Header="Комментарий"
+                            Binding="{Binding Comment}"
+                            Width="*" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <StackPanel Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Margin="10">
+      <Button x:Name="CloseButton"
+              Content="Закрыть"
+              Width="100"
+              Background="#4879AC"
+              Foreground="White" />
+    </StackPanel>
+  </Grid>
+</Window>
+

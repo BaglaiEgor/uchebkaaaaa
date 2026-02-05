@@ -1,0 +1,80 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="uchebkaaa.Pages.QualityControlDialog"
+        mc:Ignorable="d"
+        Width="900"
+        Height="600"
+        WindowStartupLocation="CenterOwner"
+        Title="Контроль качества заказа">
+  <Grid Background="#FEF9DE" Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBlock Grid.Row="0"
+               x:Name="HeaderTextBlock"
+               FontSize="18"
+               FontWeight="Bold"
+               Margin="0,0,0,10" />
+
+    <StackPanel Grid.Row="1"
+                Margin="0,0,0,10"
+                Orientation="Vertical"
+                Spacing="5">
+      <DataGrid x:Name="ChecksDataGrid"
+                AutoGenerateColumns="False">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Параметр (ID)"
+                              Binding="{Binding ParameterId}"
+                              Width="120" />
+          <DataGridCheckBoxColumn Header="Соответствует (+)"
+                                  Binding="{Binding IsAcceptable}"
+                                  Width="120" />
+          <DataGridTextColumn Header="Комментарий (для -)"
+                              Binding="{Binding Comment}"
+                              Width="*" />
+        </DataGrid.Columns>
+      </DataGrid>
+
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Left"
+                  Spacing="10">
+        <Button x:Name="AddRowButton"
+                Content="Добавить параметр"
+                Width="160"
+                Background="#4879AC"
+                Foreground="White" />
+        <Button x:Name="RemoveRowButton"
+                Content="Удалить выбранный"
+                Width="160"
+                Background="#BB0C07"
+                Foreground="White" />
+      </StackPanel>
+    </StackPanel>
+
+    <StackPanel Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="10">
+      <TextBlock x:Name="ErrorTextBlock"
+                 Foreground="#BB0C07"
+                 VerticalAlignment="Center"
+                 Margin="0,0,20,0" />
+      <Button x:Name="OkButton"
+              Content="Сохранить"
+              Width="120"
+              Background="#4879AC"
+              Foreground="White" />
+      <Button x:Name="CancelButton"
+              Content="Закрыть"
+              Width="120"
+              Background="#BB0C07"
+              Foreground="White" />
+    </StackPanel>
+  </Grid>
+</Window>
+

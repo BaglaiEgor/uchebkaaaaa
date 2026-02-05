@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="uchebkaaa.Pages.ConstructorOrderDialog"
+        Title="Завершение спецификации"
+        Width="450" Height="250"
+        WindowStartupLocation="CenterOwner">
+    <Grid Background="#FEF9DE" Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Стоимость заказа:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="1" x:Name="CostTextBox" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="2" Text="Плановая дата завершения:" Margin="0,0,0,5"/>
+        <DatePicker Grid.Row="3" x:Name="EndDatePicker" Margin="0,0,0,15"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Перевести в Подтверждение" x:Name="SaveButton" Background="#4879AC" Foreground="#FFFFFF" Padding="20,10"/>
+            <Button Content="Отмена" x:Name="CancelButton" Background="#BB0C07" Foreground="#FFFFFF" Padding="20,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

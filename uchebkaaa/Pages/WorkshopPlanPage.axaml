@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             x:Class="uchebkaaa.Pages.WorkshopPlanPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png"
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Планировка цехов"
+                           FontSize="24" FontWeight="Bold"
+                           Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton"
+                        Background="#4879AC" Foreground="#FFFFFF"
+                        Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton"
+                        Background="#4879AC" Foreground="#FFFFFF"
+                        Padding="15,8" FontSize="14"/>
+                <TextBlock Text="Цех:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="WorkshopComboBox" Width="250"/>
+                <TextBlock Text="Масштаб:" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <Slider x:Name="ZoomSlider" Width="150" Minimum="0.5" Maximum="2" Value="1"
+                        VerticalAlignment="Center"/>
+                <Button Content="Сохранить" x:Name="SaveButton"
+                        Background="#4879AC" Foreground="#FFFFFF"
+                        Padding="15,8" FontSize="14"/>
+                <Button Content="Отменить изменения" x:Name="CancelButton"
+                        Background="#BB0C07" Foreground="#FFFFFF"
+                        Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Панель значков -->
+            <Border Grid.Column="0" Background="#F1F1F1" Padding="15" Margin="0,0,15,0" Width="120">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Значки" FontWeight="Bold" FontSize="14"/>
+                    <Image x:Name="IconEquipment" Source="/Assets/Images/Icons/Equipment.png"
+                           Width="48" Height="48" Cursor="Hand"/>
+                    <Image x:Name="IconFireExt" Source="/Assets/Images/Icons/FireExtinguisher.png"
+                           Width="48" Height="48" Cursor="Hand"/>
+                    <Image x:Name="IconFirstAid" Source="/Assets/Images/Icons/FirstAid.png"
+                           Width="48" Height="48" Cursor="Hand"/>
+                    <Image x:Name="IconExit" Source="/Assets/Images/Icons/Exit.jpg"
+                           Width="48" Height="48" Cursor="Hand"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Схема цеха -->
+            <Border Grid.Column="1" Background="White" BorderBrush="#4879AC" BorderThickness="1">
+                <ScrollViewer x:Name="PlanScrollViewer" HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto">
+                    <Canvas x:Name="PlanCanvas" Width="600" Height="500" Background="#FFF"/>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

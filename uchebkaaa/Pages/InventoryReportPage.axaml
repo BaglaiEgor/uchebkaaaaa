@@ -1,0 +1,60 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="uchebkaaa.Pages.InventoryReportPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png"
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Отчёт по материалам и комплектующим"
+                           FontSize="24" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton"
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <TextBlock Text="Тип:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="TypeComboBox" Width="180">
+                    <ComboBoxItem Content="Материалы" Tag="m"/>
+                    <ComboBoxItem Content="Комплектующие" Tag="a"/>
+                </ComboBox>
+                <TextBlock Text="Тип позиции:" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <ComboBox x:Name="ProductTypeComboBox" Width="200"/>
+                <Button Content="Сформировать" x:Name="BuildButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <Button Content="Печать" x:Name="PrintButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid Grid.Row="2" x:Name="ReportDataGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Склад" Binding="{Binding Warehouse}" Width="150"/>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Article}" Width="120"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding ProductType}" Width="120"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ScrollViewer>
+    <StackPanel x:Name="PrintablePanel" Spacing="10">
+        <TextBlock Text="Отчет по материалам" FontSize="18"/>
+        <DataGrid x:Name="ReportGrid"/>
+    </StackPanel>
+</ScrollViewer>
+
+    </Grid>
+</UserControl>

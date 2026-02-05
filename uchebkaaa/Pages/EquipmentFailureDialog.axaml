@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="uchebkaaa.Pages.EquipmentFailureDialog"
+        Title="Регистрация сбоя оборудования"
+        Width="450" Height="350"
+        WindowStartupLocation="CenterOwner">
+    <Grid Background="#FEF9DE" Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Оборудование:" Margin="0,0,0,5"/>
+        <ComboBox Grid.Row="1" x:Name="EquipmentComboBox" DisplayMemberBinding="{Binding Mark}" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="2" Text="Дата и время начала:" Margin="0,0,0,5"/>
+        <DatePicker Grid.Row="3" x:Name="StartDatePicker" Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="4" Spacing="10">
+            <TextBlock Text="Причина:"/>
+            <TextBox x:Name="ReasonTextBox" Watermark="Причина сбоя"/>
+            <TextBlock Text="Описание:"/>
+            <TextBox x:Name="DescriptionTextBox" AcceptsReturn="True" Height="60" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0" Spacing="10">
+            <Button Content="Сохранить" x:Name="SaveButton" Background="#4879AC" Foreground="#FFFFFF" Padding="20,10"/>
+            <Button Content="Отмена" x:Name="CancelButton" Background="#BB0C07" Foreground="#FFFFFF" Padding="20,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

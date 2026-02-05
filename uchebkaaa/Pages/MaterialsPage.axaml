@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="uchebkaaa.Pages.MaterialsPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png" 
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Учет материалов и комплектующих" 
+                           FontSize="24" FontWeight="Bold" Foreground="#FFFFFF" 
+                           VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton" 
+                        Background="#4879AC" Foreground="#FFFFFF" 
+                        Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton" 
+                        Background="#4879AC" Foreground="#FFFFFF" 
+                        Padding="15,8" FontSize="14"/>
+                <TextBlock Text="Склад:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="WarehouseComboBox" Width="200" 
+                          SelectedIndex="0" 
+                          HorizontalAlignment="Left" DisplayMemberBinding="{Binding Name}"/>
+                <Button Content="Добавить" x:Name="AddButton" 
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <Button Content="Редактировать" x:Name="EditButton" 
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <Button Content="Удалить" x:Name="DeleteButton" 
+                        Background="#BB0C07" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid Grid.Row="2" x:Name="MaterialsDataGrid" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True" 
+                  SelectionMode="Single"
+                  Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Article}" Width="100"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="100"/>
+                <DataGridTextColumn Header="Ед. изм." Binding="{Binding Unit}" Width="80"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat=C}" Width="100"/>
+                <DataGridTextColumn Header="Поставщик" Binding="{Binding SupplierName}" Width="150"/>
+                <DataGridTextColumn Header="Срок поставки" Binding="{Binding SupplyTime}" Width="120"/>
+                <DataGridTextColumn Header="Склад" Binding="{Binding WarehouseName}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="3" Background="#F1F1F1" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="30">
+                <TextBlock x:Name="StatusTextBlock" FontSize="14"/>
+                <TextBlock x:Name="TotalCostTextBlock" FontSize="14"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

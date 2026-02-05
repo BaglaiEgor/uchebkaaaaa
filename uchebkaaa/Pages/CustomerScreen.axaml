@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             x:Class="uchebkaaa.Pages.CustomerScreen">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png" 
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Экран заказчика" 
+                          FontSize="24" FontWeight="Bold" 
+                          Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <Grid Grid.Row="1" Margin="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Left">
+                <TextBlock Text="Добро пожаловать, заказчик!" 
+                           FontSize="20"
+                           VerticalAlignment="Center"/>
+                <Button Content="Мои заказы" x:Name="MyOrdersButton"
+                        Background="#4879AC" Foreground="#FFFFFF"
+                        Padding="20,10" FontSize="14" Margin="20,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

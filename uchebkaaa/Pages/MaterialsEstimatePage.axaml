@@ -1,0 +1,60 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="uchebkaaa.Pages.MaterialsEstimatePage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png"
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Оценка затрат материалов и комплектующих"
+                           FontSize="24" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton"
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <TextBlock Text="Заказ:" VerticalAlignment="Center"/>
+                <ComboBox x:Name="OrderComboBox" Width="350" DisplayMemberBinding="{Binding Name}"/>
+                <Button Content="Рассчитать" x:Name="CalcButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid Grid.Row="2" x:Name="EstimateDataGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тип" Binding="{Binding ItemType}" Width="100"/>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Article}" Width="120"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Требуется" Binding="{Binding Required}" Width="90"/>
+                <DataGridTextColumn Header="В наличии" Binding="{Binding InStock}" Width="90"/>
+                <DataGridTextColumn Header="Недостаёт" Binding="{Binding Shortage}" Width="90"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding PriceStr}" Width="100"/>
+                <DataGridTextColumn Header="Себестоимость" Binding="{Binding CostStr}" Width="110"/>
+                <DataGridTextColumn Header="Срок доставки" Binding="{Binding SupplyTime}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="3" Background="#F1F1F1" Padding="10">
+            <StackPanel Orientation="Horizontal" Spacing="30">
+                <TextBlock x:Name="TotalCostTextBlock" FontSize="14" FontWeight="Bold"/>
+                <TextBlock x:Name="DeliveryTimeTextBlock" FontSize="14" FontWeight="Bold"/>
+                <TextBlock x:Name="MinProductionTextBlock" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

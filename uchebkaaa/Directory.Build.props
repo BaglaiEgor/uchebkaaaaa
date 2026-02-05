@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <DisableAvaloniaTelemetry>true</DisableAvaloniaTelemetry>
+    <AvaloniaTelemetryDisabled>true</AvaloniaTelemetryDisabled>
+  </PropertyGroup>
+</Project>

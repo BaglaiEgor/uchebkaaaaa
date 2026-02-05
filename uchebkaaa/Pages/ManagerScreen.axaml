@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             x:Class="uchebkaaa.Pages.ManagerScreen">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png" 
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Экран менеджера" 
+                          FontSize="24" FontWeight="Bold" 
+                          Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <!-- Navigation -->
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Материалы" x:Name="MaterialsButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+                <Button Content="Комплектующие" x:Name="AccessoriesButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+                <Button Content="Заказы" x:Name="OrdersButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+                <Button Content="Оценка затрат" x:Name="EstimateButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+                <Button Content="Отчёт по складам" x:Name="ReportButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+                <Button Content="Диаграмма Ганта" x:Name="GanttButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content -->
+        <Grid Grid.Row="2" Margin="40">
+            <TextBlock Text="Добро пожаловать, менеджер!" 
+                      FontSize="20" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</UserControl>

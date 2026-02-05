@@ -1,0 +1,214 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    <DisableAvaloniaTelemetry>true</DisableAvaloniaTelemetry>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\Images\Components\Б842.jpg" />
+    <None Remove="Assets\Images\Components\Г876.jpg" />
+    <None Remove="Assets\Images\Components\К27.jpg" />
+    <None Remove="Assets\Images\Components\М6.jpeg" />
+    <None Remove="Assets\Images\Components\П633.jpg" />
+    <None Remove="Assets\Images\Components\П697.png" />
+    <None Remove="Assets\Images\Components\П737.jpg" />
+    <None Remove="Assets\Images\Components\Р176.png" />
+    <None Remove="Assets\Images\Components\Р294.jpg" />
+    <None Remove="Assets\Images\Components\Р396.PNG" />
+    <None Remove="Assets\Images\Components\С489.jpg" />
+    <None Remove="Assets\Images\Components\Ш813.jpg" />
+    <None Remove="Assets\Images\Icons\Equipment.png" />
+    <None Remove="Assets\Images\Icons\Exit.jpg" />
+    <None Remove="Assets\Images\Icons\FireExtinguisher.png" />
+    <None Remove="Assets\Images\Icons\FirstAid.png" />
+    <None Remove="Assets\Images\Logos\Logo_Color.png" />
+    <None Remove="Assets\Images\Logos\Logo_Color_Transparent.png" />
+    <None Remove="Assets\Images\Logos\Logo_Monochrome.png" />
+    <None Remove="Assets\Images\Materials\Б50.jpg" />
+    <None Remove="Assets\Images\Materials\К44.jpg" />
+    <None Remove="Assets\Images\Materials\К53.jpg" />
+    <None Remove="Assets\Images\Materials\К55.jpg" />
+    <None Remove="Assets\Images\Materials\Л28.jpg" />
+    <None Remove="Assets\Images\Materials\Т5.jpg" />
+    <None Remove="Assets\Images\Materials\У7.jpg" />
+    <None Remove="Assets\Images\Materials\Ф56.jpg" />
+    <None Remove="Assets\Images\Materials\Ш17.jpg" />
+    <None Remove="Assets\Images\Materials\Ш19.png" />
+    <None Remove="Assets\Images\Materials\Ш43.jpg" />
+    <None Remove="Assets\Images\Workshops\Заготовительный цех.png" />
+    <None Remove="Assets\Images\Workshops\Механический цех.png" />
+    <None Remove="Assets\Images\Workshops\Покрасочный цех.png" />
+    <None Remove="Assets\Images\Workshops\Сборочный цех.png" />
+    <None Remove="Assets\Images\Workshops\Упаковочный цех.png" />
+    <None Remove="Assets\Images\Users\loginDEaxm2018.png" />
+    <None Remove="Assets\Images\Users\loginDEbid2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEcui2018.png" />
+    <None Remove="Assets\Images\Users\loginDEcxr2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEdat2018.png" />
+    <None Remove="Assets\Images\Users\loginDEdgp2018.png" />
+    <None Remove="Assets\Images\Users\loginDEdsm2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEefa2018.png" />
+    <None Remove="Assets\Images\Users\loginDEemw2018.png" />
+    <None Remove="Assets\Images\Users\loginDEfsp2018.png" />
+    <None Remove="Assets\Images\Users\loginDEgcl2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEggp2018.png" />
+    <None Remove="Assets\Images\Users\loginDEgho2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEgju2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEill2018.png" />
+    <None Remove="Assets\Images\Users\loginDEisy2018.png" />
+    <None Remove="Assets\Images\Users\loginDEitt2018.png" />
+    <None Remove="Assets\Images\Users\loginDEiyy2018.gif" />
+    <None Remove="Assets\Images\Users\loginDEjrd2018.png" />
+    <None Remove="Assets\Images\Users\loginDEket2018.png" />
+    <None Remove="Assets\Images\Users\loginDElag2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEnoq2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEocb2018.png" />
+    <None Remove="Assets\Images\Users\loginDEoni2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEosl2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEpri2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEpwa2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEqda2018.png" />
+    <None Remove="Assets\Images\Users\loginDErvs2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDErwk2018.png" />
+    <None Remove="Assets\Images\Users\loginDEsds2018.png" />
+    <None Remove="Assets\Images\Users\loginDEshj2018.gif" />
+    <None Remove="Assets\Images\Users\loginDEsjj2018.png" />
+    <None Remove="Assets\Images\Users\loginDEslj2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEsmg2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEteq2018.png" />
+    <None Remove="Assets\Images\Users\loginDEtic2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEuwn2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEvem2018.png" />
+    <None Remove="Assets\Images\Users\loginDEvkg2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEwdm2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEwfv2018.png" />
+    <None Remove="Assets\Images\Users\loginDExeu2018.png" />
+    <None Remove="Assets\Images\Users\loginDExhd2018.png" />
+    <None Remove="Assets\Images\Users\loginDExsu2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEykk2018.gif" />
+    <None Remove="Assets\Images\Users\loginDEytk2018.png" />
+    <None Remove="Assets\Images\Users\loginDEyua2018" />
+    <None Remove="Assets\Images\Users\loginDEzfi2018.jpg" />
+    <None Remove="Assets\Images\Users\loginDEzre2018.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\Images\Components\Б842.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\Г876.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\К27.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\М6.jpeg" />
+    <AvaloniaResource Include="Assets\Images\Components\П633.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\П697.png" />
+    <AvaloniaResource Include="Assets\Images\Components\П737.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\Р176.png" />
+    <AvaloniaResource Include="Assets\Images\Components\Р294.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\Р396.PNG" />
+    <AvaloniaResource Include="Assets\Images\Components\С489.jpg" />
+    <AvaloniaResource Include="Assets\Images\Components\Ш813.jpg" />
+    <AvaloniaResource Include="Assets\Images\Icons\Equipment.png" />
+    <AvaloniaResource Include="Assets\Images\Icons\Exit.jpg" />
+    <AvaloniaResource Include="Assets\Images\Icons\FireExtinguisher.png" />
+    <AvaloniaResource Include="Assets\Images\Icons\FirstAid.png" />
+    <AvaloniaResource Include="Assets\Images\Logos\Logo_Color.png" />
+    <AvaloniaResource Include="Assets\Images\Logos\Logo_Color_Transparent.png" />
+    <AvaloniaResource Include="Assets\Images\Logos\Logo_Monochrome.png" />
+    <AvaloniaResource Include="Assets\Images\Materials\Б50.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\К44.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\К53.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\К55.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\Л28.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\Т5.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\У7.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\Ф56.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\Ш17.jpg" />
+    <AvaloniaResource Include="Assets\Images\Materials\Ш19.png" />
+    <AvaloniaResource Include="Assets\Images\Materials\Ш43.jpg" />
+    <AvaloniaResource Include="Assets\Images\Workshops\Заготовительный цех.png" />
+    <AvaloniaResource Include="Assets\Images\Workshops\Механический цех.png" />
+    <AvaloniaResource Include="Assets\Images\Workshops\Покрасочный цех.png" />
+    <AvaloniaResource Include="Assets\Images\Workshops\Сборочный цех.png" />
+    <AvaloniaResource Include="Assets\Images\Workshops\Упаковочный цех.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEaxm2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEbid2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEcui2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEcxr2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEdat2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEdgp2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEdsm2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEefa2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEemw2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEfsp2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEgcl2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEggp2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEgho2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEgju2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEill2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEisy2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEitt2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEiyy2018.gif" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEjrd2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEket2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDElag2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEnoq2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEocb2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEoni2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEosl2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEpri2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEpwa2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEqda2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDErvs2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDErwk2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEsds2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEshj2018.gif" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEsjj2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEslj2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEsmg2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEteq2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEtic2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEuwn2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEvem2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEvkg2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEwdm2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEwfv2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDExeu2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDExhd2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDExsu2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEykk2018.gif" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEytk2018.png" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEyua2018" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEzfi2018.jpg" />
+    <AvaloniaResource Include="Assets\Images\Users\loginDEzre2018.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.9" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.9">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MessageBox.Avalonia" Version="3.2.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    <PackageReference Include="PdfSharpCore" Version="1.3.67" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\AccessoryEditDialog.axaml.cs">
+      <DependentUpon>AccessoryEditDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MaterialEditDialog.axaml.cs">
+      <DependentUpon>MaterialEditDialog.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

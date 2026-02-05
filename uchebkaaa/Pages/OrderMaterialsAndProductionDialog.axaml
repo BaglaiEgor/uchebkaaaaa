@@ -1,0 +1,130 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="uchebkaaa.Pages.OrderMaterialsAndProductionDialog"
+        mc:Ignorable="d"
+        Width="1000"
+        Height="700"
+        WindowStartupLocation="CenterOwner"
+        Title="Анализ материалов и производства по заказу">
+  <Grid Background="#FEF9DE" Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBlock Grid.Row="0"
+               x:Name="HeaderTextBlock"
+               FontSize="18"
+               FontWeight="Bold"
+               Margin="0,0,0,10" />
+
+    <TabControl Grid.Row="1" Margin="0,0,0,10">
+      <TabItem Header="Материалы и доставка">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <DataGrid Grid.Row="0"
+                    x:Name="MaterialsDataGrid"
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    Margin="0,0,0,10">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Тип"
+                                  Binding="{Binding Kind}"
+                                  Width="80" />
+              <DataGridTextColumn Header="Артикул"
+                                  Binding="{Binding Article}"
+                                  Width="120" />
+              <DataGridTextColumn Header="Наименование"
+                                  Binding="{Binding Name}"
+                                  Width="200" />
+              <DataGridTextColumn Header="Требуется"
+                                  Binding="{Binding RequiredQuantity}"
+                                  Width="80" />
+              <DataGridTextColumn Header="Есть на складах"
+                                  Binding="{Binding AvailableQuantity}"
+                                  Width="100" />
+              <DataGridTextColumn Header="Не хватает"
+                                  Binding="{Binding MissingQuantity}"
+                                  Width="90" />
+              <DataGridTextColumn Header="Цена"
+                                  Binding="{Binding PurchasePrice, StringFormat='{}{0:C}'}"
+                                  Width="100" />
+              <DataGridTextColumn Header="Поставщик"
+                                  Binding="{Binding SupplierName}"
+                                  Width="150" />
+              <DataGridTextColumn Header="Срок поставки"
+                                  Binding="{Binding SupplierTimeRaw}"
+                                  Width="120" />
+            </DataGrid.Columns>
+          </DataGrid>
+
+          <StackPanel Grid.Row="1"
+                      Orientation="Vertical"
+                      Spacing="4">
+            <TextBlock x:Name="MaterialsSummaryTextBlock"
+                       FontSize="14" />
+          </StackPanel>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="Производство (диаграмма Ганта)">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <TextBlock Grid.Row="0"
+                     x:Name="ProductionSummaryTextBlock"
+                     FontSize="14"
+                     Margin="0,0,0,10" />
+
+          <DataGrid Grid.Row="1"
+                    x:Name="ProductionDataGrid"
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Оборудование"
+                                  Binding="{Binding EquipmentType}"
+                                  Width="160" />
+              <DataGridTextColumn Header="Изделие"
+                                  Binding="{Binding ProductId}"
+                                  Width="160" />
+              <DataGridTextColumn Header="Операция"
+                                  Binding="{Binding Operation}"
+                                  Width="200" />
+              <DataGridTextColumn Header="Начало, мин"
+                                  Binding="{Binding StartMinute, StringFormat='{}{0:F0}'}"
+                                  Width="100" />
+              <DataGridTextColumn Header="Длительность, мин"
+                                  Binding="{Binding DurationMinutes, StringFormat='{}{0:F0}'}"
+                                  Width="130" />
+              <DataGridTextColumn Header="Окончание, мин"
+                                  Binding="{Binding FinishMinute, StringFormat='{}{0:F0}'}"
+                                  Width="120" />
+            </DataGrid.Columns>
+          </DataGrid>
+        </Grid>
+      </TabItem>
+    </TabControl>
+
+    <StackPanel Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="10">
+      <Button x:Name="CloseButton"
+              Content="Закрыть"
+              Width="120"
+              Background="#4879AC"
+              Foreground="White" />
+    </StackPanel>
+  </Grid>
+</Window>
+

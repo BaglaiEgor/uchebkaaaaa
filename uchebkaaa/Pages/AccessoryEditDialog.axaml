@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Width="500" Height="600"
+        WindowStartupLocation="CenterOwner"
+        Background="#FEF9DE"
+        x:Class="uchebkaaa.Pages.AccessoryEditDialog"
+        Title="Редактирование комплектующей">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20" Spacing="15">
+            <TextBlock Text="Артикул:"/>
+            <TextBox x:Name="ArticleTextBox"/>
+            
+            <TextBlock Text="Наименование:"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Количество:"/>
+            <TextBox x:Name="CountTextBox"/>
+
+            <TextBlock Text="Ед. изм.:"/>
+            <TextBox x:Name="UnitTextBox"/>
+
+            <TextBlock Text="Цена:"/>
+            <TextBox x:Name="PriceTextBox"/>
+
+            <TextBlock Text="Поставщик:"/>
+            <ComboBox x:Name="SupplierComboBox" DisplayMemberBinding="{Binding Name}"/>
+
+            <TextBlock Text="Склад:"/>
+            <ComboBox x:Name="WarehouseComboBox" DisplayMemberBinding="{Binding Name}"/>
+
+            <TextBlock Text="Тип продукта:"/>
+            <TextBox x:Name="ProductTypeTextBox"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+                <Button x:Name="SaveButton" Content="Сохранить" Background="#4879AC" Foreground="White" Padding="20,10"/>
+                <Button x:Name="CancelButton" Content="Отмена" Background="#BB0C07" Foreground="White" Padding="20,10"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

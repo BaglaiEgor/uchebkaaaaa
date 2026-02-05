@@ -1,0 +1,4 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Override AvaloniaStats to avoid BuildServices telemetry file access errors -->
+  <Target Name="AvaloniaStats" BeforeTargets="CoreCompile" />
+</Project>

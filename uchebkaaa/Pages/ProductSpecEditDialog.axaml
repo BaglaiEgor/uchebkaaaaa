@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="uchebkaaa.Pages.ProductSpecEditDialog"
+        Title="Спецификация изделия"
+        Width="700" Height="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Background="#FEF9DE" Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" x:Name="ProductNameTextBlock" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+        <TabControl Grid.Row="1">
+            <TabItem Header="Материалы">
+                <DataGrid x:Name="MaterialsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Артикул" Binding="{Binding Material.Article}" Width="100"/>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Material.Name}" Width="*"/>
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Комплектующие">
+                <DataGrid x:Name="AccessoriesGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Артикул" Binding="{Binding Accessories.Article}" Width="100"/>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Accessories.Name}" Width="*"/>
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Сборочные единицы">
+                <DataGrid x:Name="AssemblyGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Изделие" Binding="{Binding Item.Name}" Width="*"/>
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Операции">
+                <DataGrid x:Name="OperationsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Операция" Binding="{Binding Operation}" Width="150"/>
+                        <DataGridTextColumn Header="Оборудование" Binding="{Binding EquipmentType}" Width="180"/>
+                        <DataGridTextColumn Header="Время (мин)" Binding="{Binding OperationTime}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0" Spacing="10">
+            <Button Content="Закрыть" x:Name="CloseButton" Background="#4879AC" Foreground="#FFFFFF" Padding="20,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

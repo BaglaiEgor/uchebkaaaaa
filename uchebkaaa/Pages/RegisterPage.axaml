@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="uchebkaaa.Pages.RegisterPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header with Logo -->
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png" 
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Регистрация заказчика" 
+                          FontSize="24" FontWeight="Bold" 
+                          Foreground="#FFFFFF" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Registration Form -->
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+              Width="400" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Логин:" Margin="0,0,0,5" FontSize="16"/>
+            <TextBox Grid.Row="1" x:Name="LoginTextBox" Margin="0,0,0,15" 
+                    Watermark="Введите логин"/>
+
+            <TextBlock Grid.Row="2" Text="Пароль:" Margin="0,0,0,5" FontSize="16"/>
+            <TextBox Grid.Row="3" x:Name="PasswordTextBox" PasswordChar="*" 
+                    Margin="0,0,0,15" Watermark="Введите пароль"/>
+
+            <TextBlock Grid.Row="4" Text="ФИО:" Margin="0,0,0,5" FontSize="16"/>
+            <TextBox Grid.Row="5" x:Name="NameTextBox" Margin="0,0,0,20" 
+                    Watermark="Введите ФИО"/>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                <Button Content="Зарегистрироваться" x:Name="RegisterButton" 
+                       Background="#BB0C07" Foreground="#FFFFFF" 
+                       Padding="30,10" FontSize="16" FontWeight="Bold"/>
+                <Button Content="Назад" x:Name="BackButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="30,10" FontSize="16"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="7" x:Name="ErrorTextBlock" 
+                      Foreground="#BB0C07" FontSize="14" 
+                      TextWrapping="Wrap" Margin="0,10,0,0" 
+                      IsVisible="False"/>
+
+            <TextBlock Grid.Row="8" x:Name="PasswordRequirementsTextBlock" 
+                      FontSize="12" Foreground="#666666" 
+                      TextWrapping="Wrap" Margin="0,5,0,0">
+                <Run Text="Требования к паролю:" FontWeight="Bold"/>
+                <LineBreak/>
+                <Run Text="• От 4 до 16 символов"/>
+                <LineBreak/>
+                <Run Text="• Не должно быть символов: * &amp; { } | +"/>
+                <LineBreak/>
+                <Run Text="• Должны быть заглавные буквы"/>
+                <LineBreak/>
+                <Run Text="• Должны быть цифры"/>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

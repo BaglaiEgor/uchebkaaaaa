@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="uchebkaaa.Pages.ProductSpecPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png"
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Спецификации изделий"
+                           FontSize="24" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton"
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <Button Content="Редактировать спецификацию" x:Name="EditButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+                <Button Content="Печать" x:Name="PrintButton" Background="#4879AC" Foreground="#FFFFFF" Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid Grid.Row="2" x:Name="ProductsDataGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" SelectionMode="Single" Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Изделие" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Размеры" Binding="{Binding Size}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

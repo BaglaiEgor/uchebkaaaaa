@@ -1,0 +1,168 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="uchebkaaa.Pages.OrdersPage"
+             mc:Ignorable="d"
+             d:DesignWidth="1200"
+             d:DesignHeight="800">
+  <Grid Background="#FEF9DE">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <!-- Заголовок -->
+    <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0"
+               Source="/Assets/Images/Logos/Logo_Color_Transparent.png"
+               Width="60"
+               Height="60"
+               Margin="0,0,20,0" />
+        <TextBlock Grid.Column="1"
+                   Text="Список заказов"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Foreground="#FFFFFF"
+                   VerticalAlignment="Center" />
+        <StackPanel Grid.Column="2"
+                    Orientation="Horizontal"
+                    Spacing="10"
+                    VerticalAlignment="Center">
+          <Button x:Name="BackButton"
+                  Content="Назад"
+                  Background="#4879AC"
+                  Foreground="White"
+                  Padding="15,8"
+                  FontSize="14" />
+          <Button x:Name="LogoutButton"
+                  Content="Выход"
+                  Background="#4879AC"
+                  Foreground="#FFFFFF"
+                  Padding="20,10"
+                  FontSize="14" />
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <!-- Панель инструментов и фильтров -->
+    <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+      <StackPanel Orientation="Horizontal" Spacing="10">
+        <Button x:Name="AddButton"
+                Content="Добавить заказ"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="EditButton"
+                Content="Редактировать"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="DeleteButton"
+                Content="Удалить"
+                Background="#BB0C07"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="CancelOrderButton"
+                Content="Отменить заказ"
+                Background="#BB0C07"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="TakeOrderButton"
+                Content="Принять новый заказ"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="ChangeStatusButton"
+                Content="Изменить статус"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="QualityButton"
+                Content="Контроль качества"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="AnalysisButton"
+                Content="Материалы и производство"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+        <Button x:Name="HistoryButton"
+                Content="История статусов"
+                Background="#4879AC"
+                Foreground="#FFFFFF"
+                Padding="15,8"
+                FontSize="14" />
+
+        <StackPanel Orientation="Horizontal"
+                    Spacing="5"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center">
+          <TextBlock Text="Фильтр:"
+                     VerticalAlignment="Center" />
+          <ComboBox x:Name="FilterComboBox"
+                    Width="220" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+
+    <!-- Таблица заказов -->
+    <DataGrid Grid.Row="2"
+              x:Name="OrdersDataGrid"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              SelectionMode="Single"
+              Margin="20">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="№ заказа"
+                            Binding="{Binding DisplayNumber}"
+                            Width="160" />
+        <DataGridTextColumn Header="Дата"
+                            Binding="{Binding Date}"
+                            Width="110" />
+        <DataGridTextColumn Header="Наименование"
+                            Binding="{Binding Name}"
+                            Width="200" />
+        <DataGridTextColumn Header="Статус"
+                            Binding="{Binding Status}"
+                            Width="150" />
+        <DataGridTextColumn Header="Стоимость"
+                            Binding="{Binding Cost, StringFormat='{}{0:C}'}"
+                            Width="120" />
+        <DataGridTextColumn Header="Заказчик"
+                            Binding="{Binding CustomerName}"
+                            Width="200" />
+        <DataGridTextColumn Header="План. дата"
+                            Binding="{Binding EndDate}"
+                            Width="120" />
+        <DataGridTextColumn Header="Менеджер"
+                            Binding="{Binding ManagerName}"
+                            Width="200" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <!-- Статус -->
+    <Border Grid.Row="3" Background="#F1F1F1" Padding="10">
+      <TextBlock x:Name="StatusTextBlock"
+                 FontSize="14" />
+    </Border>
+  </Grid>
+</UserControl>
+

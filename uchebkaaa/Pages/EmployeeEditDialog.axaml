@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="uchebkaaa.Pages.EmployeeEditDialog"
+        Title="Редактирование работника" Width="600" Height="600">
+    <ScrollViewer Margin="20" Background="#FEF9DE">
+        <StackPanel Spacing="10">
+
+            <TextBlock Text="Фамилия:" FontSize="14"/>
+            <TextBox x:Name="LastNameTextBox"/>
+
+            <TextBlock Text="Имя:" FontSize="14"/>
+            <TextBox x:Name="FirstNameTextBox"/>
+
+            <TextBlock Text="Отчество:" FontSize="14"/>
+            <TextBox x:Name="MiddleNameTextBox"/>
+
+            <TextBlock Text="Дата рождения:" FontSize="14"/>
+            <DatePicker x:Name="BirthDatePicker"/>
+
+            <TextBlock Text="Домашний адрес:" FontSize="14"/>
+            <TextBox x:Name="HomeAddressTextBox"/>
+
+            <TextBlock Text="Образование:" FontSize="14"/>
+            <TextBox x:Name="EducationTextBox"/>
+
+            <TextBlock Text="Квалификация:" FontSize="14"/>
+            <TextBox x:Name="QualificationTextBox"/>
+
+            <TextBlock Text="Операции:" FontSize="14"/>
+            <ScrollViewer MaxHeight="150">
+                <StackPanel x:Name="OperationsStackPanel"/>
+            </ScrollViewer>
+
+            <TextBlock x:Name="ErrorTextBlock" Foreground="#BB0C07" FontSize="12" 
+                       TextWrapping="Wrap" IsVisible="False"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="Сохранить" x:Name="SaveButton" Background="#4879AC" Foreground="White" Padding="20,10" FontSize="14"/>
+                <Button Content="Отмена" x:Name="CancelButton" Background="#BB0C07" Foreground="White" Padding="20,10" FontSize="14"/>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</Window>

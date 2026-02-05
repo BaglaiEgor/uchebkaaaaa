@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             x:Class="uchebkaaa.Pages.EmployeeManagementPage">
+    <Grid Background="#FEF9DE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#BB0C07" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Assets/Images/Logos/Logo_Color_Transparent.png" 
+                       Width="60" Height="60" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="Учет работников производства" 
+                          FontSize="24" FontWeight="Bold" 
+                          Foreground="#FFFFFF" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Выход" x:Name="LogoutButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="20,10" FontSize="14"/>
+            </Grid>
+        </Border>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="1" Background="#F3CC8D" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Назад" x:Name="BackButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="15,8" FontSize="14"/>
+                <Button Content="Добавить работника" x:Name="AddButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="15,8" FontSize="14"/>
+                <Button Content="Редактировать" x:Name="EditButton" 
+                       Background="#4879AC" Foreground="#FFFFFF" 
+                       Padding="15,8" FontSize="14"/>
+                <Button Content="Удалить" x:Name="DeleteButton" 
+                       Background="#BB0C07" Foreground="#FFFFFF" 
+                       Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+
+        <!-- DataGrid -->
+        <DataGrid Grid.Row="2" x:Name="EmployeesDataGrid" 
+                 AutoGenerateColumns="False" 
+                 IsReadOnly="True" 
+                 SelectionMode="Single"
+                 Margin="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="150"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="150"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" Width="150"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="100"/>
+                <DataGridTextColumn Header="Операции" Binding="{Binding OperationsString}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Status -->
+        <Border Grid.Row="3" Background="#F1F1F1" Padding="10">
+            <TextBlock x:Name="StatusTextBlock" FontSize="14"/>
+        </Border>
+    </Grid>
+</UserControl>
