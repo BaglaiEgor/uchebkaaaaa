@@ -41,21 +41,31 @@ public partial class MaterialsEstimatePage : UserControl
 
         void Accumulate(string productId, int factor)
         {
-            foreach (var ms in db.MaterialSpecs.Include(m => m.Material).Where(m => m.ProductId == productId))
+            var materialSpecs = db.MaterialSpecs.Include(m => m.Material)
+                                .Where(m => m.ProductId == productId)
+                                .ToList();
+            foreach (var ms in materialSpecs)
             {
                 var key = "M:" + ms.MaterialId;
                 if (!materialCounts.ContainsKey(key)) materialCounts[key] = 0;
                 materialCounts[key] += ms.Count * factor;
             }
-            foreach (var a in db.AccessoriesSpecs.Include(x => x.Accessories).Where(a => a.ProductId == productId))
+
+            var accessorySpecs = db.AccessoriesSpecs.Include(x => x.Accessories)
+                                    .Where(a => a.ProductId == productId)
+                                    .ToList();
+            foreach (var a in accessorySpecs)
             {
                 var key = "A:" + a.AccessoriesId;
                 if (!accessoryCounts.ContainsKey(key)) accessoryCounts[key] = 0;
                 accessoryCounts[key] += a.Count * factor;
             }
-            foreach (var asm in db.AssemblySpecs.Where(a => a.ProductId == productId))
+
+            var assemblyItems = db.AssemblySpecs.Where(a => a.ProductId == productId).ToList();
+            foreach (var asm in assemblyItems)
                 Accumulate(asm.ItemId, factor * asm.Count);
         }
+
         Accumulate(order.ProductId, 1);
 
         var rows = new List<object>();

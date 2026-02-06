@@ -10,7 +10,7 @@ namespace uchebkaaa.Pages
             InitializeComponent();
             LogoutButton.Click += LogoutButton_Click;
             FailuresButton.Click += (_, _) => MainWindow.NavigateTo(new EquipmentFailuresPage());
-            QualityButton.Click += (_, _) => MainWindow.NavigateTo(new QualityControlPage());
+            //QualityButton.Click += (_, _) => MainWindow.NavigateTo(new QualityControlPage());
             SpecsButton.Click += (_, _) => MainWindow.NavigateTo(new ProductSpecPage());
             OrderButton.Click += (_, _) => MainWindow.NavigateTo(new OrdersPage());
         }

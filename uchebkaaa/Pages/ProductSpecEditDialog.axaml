@@ -13,43 +13,155 @@
         <TextBlock Grid.Row="0" x:Name="ProductNameTextBlock" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
         <TabControl Grid.Row="1">
             <TabItem Header="Материалы">
-                <DataGrid x:Name="MaterialsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Артикул" Binding="{Binding Material.Article}" Width="100"/>
-                        <DataGridTextColumn Header="Наименование" Binding="{Binding Material.Name}" Width="*"/>
-                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                                <Grid RowDefinitions="*,Auto" RowSpacing="10">
+                    <DataGrid x:Name="MaterialsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Артикул" Binding="{Binding Material.Article}" Width="100"/>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Material.Name}" Width="*"/>
+                            <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Row="1" Spacing="6">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <StackPanel Width="260" Spacing="4">
+                                <TextBlock Text="Материал"/>
+                                <ComboBox x:Name="MaterialComboBox">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Width="120" Spacing="4">
+                                <TextBlock Text="Кол-во"/>
+                                <TextBox x:Name="MaterialCountTextBox"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                            <Button Content="Добавить" x:Name="MaterialAddButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Обновить" x:Name="MaterialUpdateButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Удалить" x:Name="MaterialDeleteButton" Background="#BB0C07" Foreground="White" Padding="16,8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="Комплектующие">
-                <DataGrid x:Name="AccessoriesGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Артикул" Binding="{Binding Accessories.Article}" Width="100"/>
-                        <DataGridTextColumn Header="Наименование" Binding="{Binding Accessories.Name}" Width="*"/>
-                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                 <Grid RowDefinitions="*,Auto" RowSpacing="10">
+                    <DataGrid x:Name="AccessoriesGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Артикул" Binding="{Binding Accessories.Article}" Width="100"/>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Accessories.Name}" Width="*"/>
+                            <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Row="1" Spacing="6">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <StackPanel Width="260" Spacing="4">
+                                <TextBlock Text="Комплектующее"/>
+                                <ComboBox x:Name="AccessoryComboBox">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Width="120" Spacing="4">
+                                <TextBlock Text="Кол-во"/>
+                                <TextBox x:Name="AccessoryCountTextBox"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                            <Button Content="Добавить" x:Name="AccessoryAddButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Обновить" x:Name="AccessoryUpdateButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Удалить" x:Name="AccessoryDeleteButton" Background="#BB0C07" Foreground="White" Padding="16,8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="Сборочные единицы">
-                <DataGrid x:Name="AssemblyGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Изделие" Binding="{Binding Item.Name}" Width="*"/>
-                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+               <Grid RowDefinitions="*,Auto" RowSpacing="10">
+                    <DataGrid x:Name="AssemblyGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Изделие" Binding="{Binding Item.Name}" Width="*"/>
+                            <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Row="1" Spacing="6">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <StackPanel Width="260" Spacing="4">
+                                <TextBlock Text="Изделие"/>
+                                <ComboBox x:Name="AssemblyComboBox">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Width="120" Spacing="4">
+                                <TextBlock Text="Кол-во"/>
+                                <TextBox x:Name="AssemblyCountTextBox"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                            <Button Content="Добавить" x:Name="AssemblyAddButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Обновить" x:Name="AssemblyUpdateButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Удалить" x:Name="AssemblyDeleteButton" Background="#BB0C07" Foreground="White" Padding="16,8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="Операции">
-                <DataGrid x:Name="OperationsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Операция" Binding="{Binding Operation}" Width="150"/>
-                        <DataGridTextColumn Header="Оборудование" Binding="{Binding EquipmentType}" Width="180"/>
-                        <DataGridTextColumn Header="Время (мин)" Binding="{Binding OperationTime}" Width="100"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <Grid RowDefinitions="*,Auto" RowSpacing="10">
+                    <DataGrid x:Name="OperationsGrid" AutoGenerateColumns="False" IsReadOnly="True" MinHeight="150">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Binding="{Binding Number}" Width="60"/>
+                            <DataGridTextColumn Header="Операция" Binding="{Binding Operation}" Width="150"/>
+                            <DataGridTextColumn Header="Оборудование" Binding="{Binding EquipmentType}" Width="180"/>
+                            <DataGridTextColumn Header="Время (мин)" Binding="{Binding OperationTime}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Row="1" Spacing="6">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <StackPanel Width="200" Spacing="4">
+                                <TextBlock Text="Операция"/>
+                                <TextBox x:Name="OperationNameTextBox"/>
+                            </StackPanel>
+                            <StackPanel Width="160" Spacing="4">
+                                <TextBlock Text="Оборудование"/>
+                                <ComboBox x:Name="EquipmentTypeComboBox">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Width="120" Spacing="4">
+                                <TextBlock Text="Время (мин)"/>
+                                <TextBox x:Name="OperationTimeTextBox"/>
+                            </StackPanel>
+                            <StackPanel Width="80" Spacing="4">
+                                <TextBlock Text="№"/>
+                                <TextBox x:Name="OperationNumberTextBox"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                            <Button Content="Добавить" x:Name="OperationAddButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Обновить" x:Name="OperationUpdateButton" Background="#4879AC" Foreground="White" Padding="16,8"/>
+                            <Button Content="Удалить" x:Name="OperationDeleteButton" Background="#BB0C07" Foreground="White" Padding="16,8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0" Spacing="10">
-            <Button Content="Закрыть" x:Name="CloseButton" Background="#4879AC" Foreground="#FFFFFF" Padding="20,10"/>
+                <StackPanel Grid.Row="2" Spacing="10" Margin="0,15,0,0">
+            <TextBlock x:Name="ErrorTextBlock" Foreground="#BB0C07" FontSize="12" TextWrapping="Wrap" IsVisible="False"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="Закрыть" x:Name="CloseButton" Background="#4879AC" Foreground="#FFFFFF" Padding="20,10"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

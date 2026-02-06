@@ -36,8 +36,8 @@
                 <TextBlock Text="Добро пожаловать, мастер!" FontSize="18" VerticalAlignment="Center" Margin="0,0,20,0"/>
                 <Button Content="Сбои оборудования" x:Name="FailuresButton"
                         Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
-                <Button Content="Контроль качества" x:Name="QualityButton"
-                        Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
+                <!--<Button Content="Контроль качества" x:Name="QualityButton"
+                        Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>-->
                 <Button Content="Спецификации" x:Name="SpecsButton"
                         Background="#4879AC" Foreground="#FFFFFF" Padding="20,10" FontSize="14"/>
                 <Button Content="Заказы" x:Name="OrderButton"
